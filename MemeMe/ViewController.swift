@@ -124,5 +124,37 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
+
+    @IBAction func saveTheMeme(sender: AnyObject) {
+        save()
+    }
+
+    
+    func save() {
+        //create the meme from text and image
+        let memedImage = generateMemedImage()
+        
+        let meme = Meme( topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
+        
+        print(meme)
+        UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil);
+    }
+    
+    struct Meme {
+        var topText: NSString
+        var bottomText: NSString
+        var image: UIImage
+        var memedImage: UIImage
+    }
+    
+    func generateMemedImage() -> UIImage {
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return memedImage
+    }
+    
 }
 

@@ -31,6 +31,11 @@
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="g27-gJ-d8T"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Save!" id="cph-rO-2rT">
+                                        <connections>
+                                            <action selector="saveTheMeme:" destination="BYZ-38-t0r" id="CV4-ku-Rf6"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C2o-8z-TDc">

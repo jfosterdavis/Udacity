@@ -32,12 +32,12 @@ class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-//        if let text = textField.text {
-//            if text != "TOP" || text != "BOTTOM"{
-//                textField.text = ""
-//            
-//            }
-//        }
+        if let text = textField.text {
+            if text != "TOP" || text != "BOTTOM"{
+                textField.text = ""
+            
+            }
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

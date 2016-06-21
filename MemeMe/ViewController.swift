@@ -14,9 +14,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imagePickerView: UIImageView!
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    
+    var theMeme: Meme!
     
     //Delegate Objects
     let textFieldDelegate = MemeTextFieldDelegate()
@@ -42,12 +46,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //set the text field attributes
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        resetTextFields()
         
         //center text
         topTextField.textAlignment = NSTextAlignment.Center
         bottomTextField.textAlignment = NSTextAlignment.Center
         
+        //set up buttons
+        setButtonsEnabled(false)
+        
+        
 
+    }
+    
+    func resetTextFields(){
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
     }
     
     override func viewWillAppear(animated: Bool){
@@ -86,6 +100,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    //user did pick an image
     func imagePickerController(picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("imagePickerController was called")
@@ -93,6 +108,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
             print("an image was passed to ViewController")
             imagePickerView.image = image
+            //ensure the buttons are enabled
+            setButtonsEnabled(true)
             dismissViewControllerAnimated(true, completion: nil)
         }
         
@@ -100,8 +117,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //user canceled the pick operation
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        print("imagePickerControllerDidCancel was called")
+        print("user canceled the image picking")
+        //ensure the buttons are still grayed out, if the image is blank
+        if imagePickerView.image == nil{
+            setButtonsEnabled(false)
+            
+        }
+        
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -125,8 +150,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 
-    @IBAction func saveTheMeme(sender: AnyObject) {
+    @IBAction func saveAndSend(sender: AnyObject) {
         save()
+        
+        //now send the meme
     }
 
     
@@ -136,8 +163,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let meme = Meme( topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
         
-        print(meme)
-        UIImageWriteToSavedPhotosAlbum(memedImage, nil, nil, nil);
+        theMeme = meme
+        
+        //print(meme)
+        
+    }
+    
+    @IBAction func cancel(sender: AnyObject){
+        //clear the image and text
+        imagePickerView.image = nil
+        
+        //reset text
+        resetTextFields()
+        
+        //reset buttons
+        setButtonsEnabled(false)
+    }
+    
+    @IBAction func saveToPhotosAlbum(sender: AnyObject) {
+        save()
+        
+        UIImageWriteToSavedPhotosAlbum(theMeme.memedImage, nil, nil, nil);
     }
     
     struct Meme {
@@ -154,6 +200,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         return memedImage
+    }
+    
+    func setButtonsEnabled(state: Bool){
+        self.saveButton.enabled = state
+        self.shareButton.enabled = state
     }
     
 }

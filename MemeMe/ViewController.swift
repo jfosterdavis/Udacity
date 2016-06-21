@@ -217,8 +217,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setBarsVisible(true)
         
         //render the image
-        UIGraphicsBeginImageContext(imagePickerView.frame.size)
-        view.drawViewHierarchyInRect(imagePickerView.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

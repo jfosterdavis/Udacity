@@ -50,6 +50,42 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        
+        //subscribe to keyboard notifications
+        self.subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.unsubscribeFromKeyboardNotifications()
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as!NSValue
+        return keyboardSize.CGRectValue().height
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
     func imagePickerController(picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("imagePickerController was called")

@@ -20,6 +20,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    
+    @IBOutlet weak var theTopBar: UIToolbar!
+    @IBOutlet weak var theNavBar: UIToolbar!
+    
     var theMeme: Meme!
     
     //Delegate Objects
@@ -209,17 +213,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateMemedImage() -> UIImage {
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        //hide toolbars navbars
+        setBarsVisible(true)
+        
+        //render the image
+        UIGraphicsBeginImageContext(imagePickerView.frame.size)
+        view.drawViewHierarchyInRect(imagePickerView.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        //show toolbars navbars
+        setBarsVisible(false)
         return memedImage
     }
     
     func setButtonsEnabled(state: Bool){
         self.saveButton.enabled = state
         self.shareButton.enabled = state
+    }
+    
+    func setBarsVisible(state: Bool){
+        self.theNavBar.hidden = state
+        self.theTopBar.hidden = state
     }
     
 }

@@ -108,6 +108,8 @@
                         <outlet property="imagePickerView" destination="C2o-8z-TDc" id="H5G-W9-7tG"/>
                         <outlet property="saveButton" destination="cph-rO-2rT" id="zUP-6M-NeL"/>
                         <outlet property="shareButton" destination="C44-Uv-ATG" id="Mbk-PH-ZYK"/>
+                        <outlet property="theNavBar" destination="4YZ-Gw-X3n" id="fDc-if-L8P"/>
+                        <outlet property="theTopBar" destination="VQM-7Y-tDz" id="ZQ9-AX-MTh"/>
                         <outlet property="topTextField" destination="kd1-zZ-cCp" id="YOd-Qy-8mr"/>
                     </connections>
                 </viewController>

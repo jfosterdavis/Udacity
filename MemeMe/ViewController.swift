@@ -18,12 +18,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    //Delegate Objects
+    let textFieldDelegate = MemeTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
+        //set the delegates
+        self.topTextField.delegate = textFieldDelegate
+        self.bottomTextField.delegate = textFieldDelegate
     }
     
     func imagePickerController(picker: UIImagePickerController,

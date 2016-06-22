@@ -92,8 +92,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             //check that the first responder is below the keyboard
             if let firstResponder = getFirstResponder() {
-                if firstResponder.frame.origin.y > getKeyboardHeight(notification) {
-                 self.view.frame.origin.y -= getKeyboardHeight(notification)
+                if firstResponder.frame.origin.y >  getKeyboardHeight(notification) {
+                    self.view.frame.origin.y -= getKeyboardHeight(notification)
                 }
             }
          

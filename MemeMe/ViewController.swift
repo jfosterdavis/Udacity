@@ -87,11 +87,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        //check that the view is not already moved up for the keyboard.  if it isn't, then move the view
+        if self.view.frame.origin.y == 0 {
+            
+            //check that the first responder is below the keyboard
+            if let firstResponder = getFirstResponder() {
+                if firstResponder.frame.origin.y > getKeyboardHeight(notification) {
+                 self.view.frame.origin.y -= getKeyboardHeight(notification)
+                }
+            }
+         
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
+    }
+    
+    func getFirstResponder() -> UIView? {
+        //this code adapted from http://stackoverflow.com/questions/12173802/trying-to-find-which-text-field-is-active-ios
+        for view in self.view.subviews {
+            if view.isFirstResponder() {
+                return view
+            }
+        }
+        //there is no first responder, return nil
+        return nil
     }
     
     func subscribeToKeyboardNotifications() {

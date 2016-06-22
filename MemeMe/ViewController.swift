@@ -25,7 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var theNavBar: UIToolbar!
     
     var theMeme: Meme!
-    
+    //this comment added to commit
     //Delegate Objects
     let textFieldDelegate = MemeTextFieldDelegate()
     

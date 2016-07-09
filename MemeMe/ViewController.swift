@@ -21,10 +21,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     
     
-    @IBOutlet weak var theTopBar: UIToolbar!
-    @IBOutlet weak var theNavBar: UIToolbar!
+
+    @IBOutlet weak var topBar: UIToolbar!
+    @IBOutlet weak var navBar: UIToolbar!
     
-    var theMeme: Meme!
+    
+    var currentMeme: Meme!
     //this comment added to commit
     //Delegate Objects
     let textFieldDelegate = MemeTextFieldDelegate()
@@ -178,14 +180,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func saveAndSend(sender: AnyObject) {
         save()
         
-        let controller = UIActivityViewController(activityItems: [theMeme.memedImage], applicationActivities: nil)
+        let controller = UIActivityViewController(activityItems: [currentMeme.memedImage], applicationActivities: nil)
         //set this controller to save the image if user doesn't press cancel
         controller.completionWithItemsHandler = {
             (activityType: String?, completed: Bool, returnedItems: [AnyObject]?, error: NSError?) ->Void in
             
                 // only save the image ifthe user didn't press cancel.
                 if (completed){
-                    UIImageWriteToSavedPhotosAlbum(self.theMeme.memedImage, nil, nil, nil);
+                    UIImageWriteToSavedPhotosAlbum(self.currentMeme.memedImage, nil, nil, nil);
                 } else {
                     //user pressed cancel
                 }
@@ -203,7 +205,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let meme = Meme( topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
         
-        theMeme = meme
+        currentMeme = meme
         
         //print(meme)
         
@@ -223,7 +225,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func saveToPhotosAlbum(sender: AnyObject) {
         save()
         
-        UIImageWriteToSavedPhotosAlbum(theMeme.memedImage, nil, nil, nil);
+        UIImageWriteToSavedPhotosAlbum(currentMeme.memedImage, nil, nil, nil);
     }
     
     struct Meme {
@@ -254,8 +256,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func setBarsVisible(state: Bool){
-        self.theNavBar.hidden = state
-        self.theTopBar.hidden = state
+        self.navBar.hidden = state
+        self.topBar.hidden = state
     }
     
 }

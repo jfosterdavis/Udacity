@@ -228,12 +228,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIImageWriteToSavedPhotosAlbum(currentMeme.memedImage, nil, nil, nil);
     }
     
-    struct Meme {
-        var topText: NSString
-        var bottomText: NSString
-        var image: UIImage
-        var memedImage: UIImage
-    }
     
     func generateMemedImage() -> UIImage {
         //hide toolbars navbars

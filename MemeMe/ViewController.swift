@@ -178,21 +178,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 
     @IBAction func saveAndSend(sender: AnyObject) {
-        save()
         
-        let controller = UIActivityViewController(activityItems: [currentMeme.memedImage], applicationActivities: nil)
+        //generate the meme image
+        let memedImage = generateMemedImage()
+        
+        //define instance of ActivityViewController and pass the memedImage as activity item
+        let controller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         //set this controller to save the image if user doesn't press cancel
         controller.completionWithItemsHandler = {
             (activityType: String?, completed: Bool, returnedItems: [AnyObject]?, error: NSError?) ->Void in
             
-                // only save the image ifthe user didn't press cancel.
+                // only save the image if the user didn't press cancel.
                 if (completed){
-                    UIImageWriteToSavedPhotosAlbum(self.currentMeme.memedImage, nil, nil, nil);
+                    //run the in-app save method
+                    self.save()
+                    
+                    //UIImageWriteToSavedPhotosAlbum(self.currentMeme.memedImage, nil, nil, nil);
                 } else {
                     //user pressed cancel
                 }
             }
-        
+        //present the Acvitity View Controller
         presentViewController(controller, animated: true, completion: nil)
         
         //now send the meme

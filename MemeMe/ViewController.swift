@@ -90,12 +90,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         //check that the view is not already moved up for the keyboard.  if it isn't, then move the view
-        if self.view.frame.origin.y == 0 {
+        if view.frame.origin.y == 0 {
             
             //check that the first responder is below the keyboard
             if let firstResponder = getFirstResponder() {
                 if firstResponder.frame.origin.y >  getKeyboardHeight(notification) {
-                    self.view.frame.origin.y -= getKeyboardHeight(notification)
+                    view.frame.origin.y = -(getKeyboardHeight(notification))
                 }
             }
          
@@ -103,7 +103,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
+        view.frame.origin.y = 0
     }
     
     func getFirstResponder() -> UIView? {
@@ -164,7 +164,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         //specify that this will look in the photolibrary
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
@@ -173,7 +173,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         //specify that the picture will come from the camera
         pickerController.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(pickerController, animated: true, completion: nil)
+        presentViewController(pickerController, animated: true, completion: nil)
     }
     
 
@@ -193,7 +193,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 }
             }
         
-        self.presentViewController(controller, animated: true, completion: nil)
+        presentViewController(controller, animated: true, completion: nil)
         
         //now send the meme
     }
@@ -240,8 +240,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setBarsVisible(true)
         
         //render the image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -251,13 +251,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func setButtonsEnabled(state: Bool){
-        self.saveButton.enabled = state
-        self.shareButton.enabled = state
+        saveButton.enabled = state
+        shareButton.enabled = state
     }
     
     func setBarsVisible(state: Bool){
-        self.navBar.hidden = state
-        self.topBar.hidden = state
+        navBar.hidden = state
+        topBar.hidden = state
     }
     
 }

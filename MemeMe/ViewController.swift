@@ -205,9 +205,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     
-    func save() {
-        //create the meme from text and image
-        let memedImage = generateMemedImage()
+    func save(useThisImage: UIImage?=nil) {
+        //initialize the image we will save as the meme
+        var memedImage: UIImage
+        
+        //check to see if useThisImage was given by caller
+        if let unwrappedImage = useThisImage {
+            //you already have an image so no need to generate again
+            memedImage = unwrappedImage
+        } else {
+            //create the meme from text and image
+            memedImage = generateMemedImage()
+        }
+        
         
         let meme = Meme( topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
         

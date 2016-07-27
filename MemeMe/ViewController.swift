@@ -36,8 +36,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : -4.0,
-        
+        NSStrokeWidthAttributeName : -4.0
     ]
     
     override func viewDidLoad() {
@@ -55,8 +54,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         resetTextFields()
         
         //center text
-        topTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.textAlignment = NSTextAlignment.Center
+        //topTextField.textAlignment = NSTextAlignment.Center
+        //bottomTextField.textAlignment = NSTextAlignment.Center
         
         //set up buttons
         setButtonsEnabled(false)
@@ -160,22 +159,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        //specify that this will look in the photolibrary
-        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(pickerController, animated: true, completion: nil)
+        pickAnImageFrom(sender, source: UIImagePickerControllerSourceType.PhotoLibrary)
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         
+        pickAnImageFrom(sender, source: UIImagePickerControllerSourceType.Camera)
+        
+    }
+    
+    func pickAnImageFrom(sender: AnyObject, source: UIImagePickerControllerSourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
         //specify that the picture will come from the camera
-        pickerController.sourceType = UIImagePickerControllerSourceType.Camera
+        pickerController.sourceType = source
         presentViewController(pickerController, animated: true, completion: nil)
     }
-    
 
     @IBAction func saveAndSend(sender: AnyObject) {
         

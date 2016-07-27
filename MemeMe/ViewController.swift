@@ -54,8 +54,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         resetTextFields()
         
         //center text
-        //topTextField.textAlignment = NSTextAlignment.Center
-        //bottomTextField.textAlignment = NSTextAlignment.Center
+        //I was told this is redundant in my last Udacity Review, but I can't figure out how to set the alignment using the .defaultTextAttributes
+        topTextField.textAlignment = NSTextAlignment.Center
+        bottomTextField.textAlignment = NSTextAlignment.Center
         
         //set up buttons
         setButtonsEnabled(false)

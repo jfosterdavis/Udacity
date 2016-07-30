@@ -31,13 +31,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Delegate Objects
     let textFieldDelegate = MemeTextFieldDelegate()
     
-    //set the text field attributes
-    let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.blackColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : -4.0
-    ]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,26 +42,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.topTextField.delegate = textFieldDelegate
         self.bottomTextField.delegate = textFieldDelegate
         
-        //set the text field attributes
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
+        //set up the text fields
         resetTextFields()
         
         //center text
         //I was told this is redundant in my last Udacity Review, but I can't figure out how to set the alignment using the .defaultTextAttributes
-        topTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.textAlignment = NSTextAlignment.Center
+        //topTextField.textAlignment = NSTextAlignment.Center
+        //bottomTextField.textAlignment = NSTextAlignment.Center
         
         //set up buttons
         setButtonsEnabled(false)
         
-        
-
     }
     
     func resetTextFields(){
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        
+        //set the text field attributes
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .Center
+        
+        let memeTextAttributes = [
+            NSStrokeColorAttributeName : UIColor.blackColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSStrokeWidthAttributeName : -4.0,
+            NSParagraphStyleAttributeName: paragraphStyle
+        ]
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
     }
     
     override func viewWillAppear(animated: Bool){
@@ -189,13 +193,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             (activityType: String?, completed: Bool, returnedItems: [AnyObject]?, error: NSError?) ->Void in
             
                 // only save the image if the user didn't press cancel.
-                if (completed){
+                if completed {
                     //run the in-app save method
                     self.save()
                     
                     //UIImageWriteToSavedPhotosAlbum(self.currentMeme.memedImage, nil, nil, nil);
                 } else {
                     //user pressed cancel
+                    //do nothing because we assume the user knew that pressing cancel wouldn't save
                 }
             }
         //present the Acvitity View Controller

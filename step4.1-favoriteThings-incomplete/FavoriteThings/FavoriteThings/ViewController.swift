@@ -15,6 +15,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let favoriteThings = [
         //TODO: Fill this array with your favorite things. Then use this collection to populate your table.
+        "People",
+        "Places",
+        "Things"
     ]
 
     // Mark: Table View Data Source Methods

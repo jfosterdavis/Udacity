@@ -16,6 +16,7 @@
 		ED3A4E2F1A01B7E5002B8AA1 /* RockPaperScissorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3A4E2E1A01B7E5002B8AA1 /* RockPaperScissorsTests.swift */; };
 		EDA5EFB31A02B4F200AABA2F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA5EFB21A02B4F200AABA2F /* ResultViewController.swift */; };
 		EDA5EFB51A02BFB800AABA2F /* RockPaperScissorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA5EFB41A02BFB800AABA2F /* RockPaperScissorsViewController.swift */; };
+		F66E85011D65090A00FBB901 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E85001D65090A00FBB901 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		ED3A4E2E1A01B7E5002B8AA1 /* RockPaperScissorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsTests.swift; sourceTree = "<group>"; };
 		EDA5EFB21A02B4F200AABA2F /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		EDA5EFB41A02BFB800AABA2F /* RockPaperScissorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockPaperScissorsViewController.swift; sourceTree = "<group>"; };
+		F66E85001D65090A00FBB901 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				4D37A9B71A3916A6007035E1 /* Main.storyboard */,
+				F66E85001D65090A00FBB901 /* HistoryViewController.swift */,
 				EDA5EFB41A02BFB800AABA2F /* RockPaperScissorsViewController.swift */,
 				EDA5EFB21A02B4F200AABA2F /* ResultViewController.swift */,
 				4D08C4CA1A16B28300A95F43 /* RPS.swift */,
@@ -226,6 +229,7 @@
 				4D08C4CB1A16B28300A95F43 /* RPS.swift in Sources */,
 				ED3A4E191A01B7E5002B8AA1 /* AppDelegate.swift in Sources */,
 				4D08C4CD1A16B29700A95F43 /* RPSMatch.swift in Sources */,
+				F66E85011D65090A00FBB901 /* HistoryViewController.swift in Sources */,
 				EDA5EFB31A02B4F200AABA2F /* ResultViewController.swift in Sources */,
 				EDA5EFB51A02BFB800AABA2F /* RockPaperScissorsViewController.swift in Sources */,
 			);

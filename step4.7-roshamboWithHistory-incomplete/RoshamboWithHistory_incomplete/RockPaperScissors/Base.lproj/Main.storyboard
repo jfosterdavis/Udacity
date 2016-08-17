@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iYZ-Mq-4iF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iYZ-Mq-4iF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,7 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDr-vO-WkA">
                                 <rect key="frame" x="189" y="281" width="75" height="65"/>
                                 <state key="normal" image="scissors">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -32,13 +32,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Play!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgh-U1-uLB">
                                 <rect key="frame" x="122" y="478" width="78" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-rG-oQ3">
                                 <rect key="frame" x="123" y="171" width="75" height="65"/>
                                 <state key="normal" image="paper">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -48,11 +48,18 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pQ-vK-SEv">
                                 <rect key="frame" x="56" y="281" width="75" height="65"/>
                                 <state key="normal" image="rock">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="makeYourMove:" destination="iYZ-Mq-4iF" eventType="touchUpInside" id="fGy-X8-GSq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZY-TG-x2Q">
+                                <rect key="frame" x="136" y="507" width="50" height="30"/>
+                                <state key="normal" title="History"/>
+                                <connections>
+                                    <segue destination="EnS-zT-csj" kind="modal" id="AvQ-sb-Fx2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,6 +77,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DRJ-HZ-SdQ"/>
                     <connections>
+                        <outlet property="historyButton" destination="UZY-TG-x2Q" id="DnR-ba-Bee"/>
                         <outlet property="paperButton" destination="Ay7-rG-oQ3" id="W20-lL-iti"/>
                         <outlet property="rockButton" destination="2pQ-vK-SEv" id="dpm-25-xrO"/>
                         <outlet property="scissorsButton" destination="kDr-vO-WkA" id="3bC-0b-DYi"/>
@@ -98,8 +106,8 @@
                                     <constraint firstAttribute="height" constant="200" id="nsg-LM-Dyx"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-nF-AKs">
-                                <rect key="frame" x="110" y="500" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkQ-nF-AKs">
+                                <rect key="frame" x="61" y="500" width="89" height="30"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -113,7 +121,7 @@
                                     <constraint firstAttribute="height" constant="42" id="5w0-No-sVb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -121,7 +129,7 @@
                         <constraints>
                             <constraint firstItem="rqm-mq-mTN" firstAttribute="centerX" secondItem="HM4-MI-r2M" secondAttribute="centerX" id="2U2-ye-F4t"/>
                             <constraint firstItem="HM4-MI-r2M" firstAttribute="leading" secondItem="H5x-BJ-0Ft" secondAttribute="leadingMargin" constant="54" id="370-LM-rmS"/>
-                            <constraint firstItem="SkQ-nF-AKs" firstAttribute="leading" secondItem="H5x-BJ-0Ft" secondAttribute="leadingMargin" constant="94" id="B42-iM-SWF"/>
+                            <constraint firstItem="SkQ-nF-AKs" firstAttribute="leading" secondItem="H5x-BJ-0Ft" secondAttribute="leadingMargin" constant="45" id="B42-iM-SWF"/>
                             <constraint firstItem="HM4-MI-r2M" firstAttribute="centerX" secondItem="SkQ-nF-AKs" secondAttribute="centerX" id="Ock-8K-f65"/>
                             <constraint firstItem="mrR-ne-40c" firstAttribute="top" secondItem="SkQ-nF-AKs" secondAttribute="bottom" constant="38" id="ZzF-WG-so6"/>
                             <constraint firstItem="HM4-MI-r2M" firstAttribute="top" secondItem="rqm-mq-mTN" secondAttribute="bottom" constant="48" id="pdR-Dq-Ub6"/>
@@ -140,6 +148,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2li-T9-sgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="809" y="141"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="WUB-1Q-Ckd">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="EnS-zT-csj" customClass="HistoryViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KKz-Bs-JBt"/>
+                        <viewControllerLayoutGuide type="bottom" id="ATT-m9-C8w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bz6-pc-XAU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGu-6h-tcs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="612" y="867"/>
         </scene>
     </scenes>
     <resources>

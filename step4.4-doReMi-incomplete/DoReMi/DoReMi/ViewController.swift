@@ -19,16 +19,30 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     let model = [
         // TODO: Fill this array with data
+        "A Female Deer",
+        "A drop of golden sun",
+        "I call myself",
+        "A long long way to run",
+        "A needle pulling thread",
+        "Follow Sew",
+        "Tea",
+        "Do"
     ]
     
     // Add the two essential table data source methods here
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: Implement method to return the correct number of rows.
+        return self.model.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //TODO: Implement method to return cell with the correct reuseidentifier and populated with the correct data.
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier)!
+        let wordsForRow = self.model[indexPath.row]
+        cell.textLabel?.text = wordsForRow
+        
+        return cell
     }
 
 }

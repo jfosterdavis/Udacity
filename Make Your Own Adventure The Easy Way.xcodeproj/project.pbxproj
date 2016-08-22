@@ -14,6 +14,7 @@
 		F66E85191D6A9EA300FBB901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66E85171D6A9EA300FBB901 /* LaunchScreen.storyboard */; };
 		F66E85241D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E85231D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift */; };
 		F66E852F1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E852E1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift */; };
+		F66E853D1D6AA0B600FBB901 /* MYOAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E853C1D6AA0B600FBB901 /* MYOAViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F66E852A1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Make Your Own Adventure The Easy WayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66E852E1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Your_Own_Adventure_The_Easy_WayUITests.swift; sourceTree = "<group>"; };
 		F66E85301D6A9EA300FBB901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F66E853C1D6AA0B600FBB901 /* MYOAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MYOAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				F66E850E1D6A9EA300FBB901 /* AppDelegate.swift */,
 				F66E85101D6A9EA300FBB901 /* ViewController.swift */,
 				F66E85121D6A9EA300FBB901 /* Main.storyboard */,
+				F66E853C1D6AA0B600FBB901 /* MYOAViewController.swift */,
 				F66E85151D6A9EA300FBB901 /* Assets.xcassets */,
 				F66E85171D6A9EA300FBB901 /* LaunchScreen.storyboard */,
 				F66E851A1D6A9EA300FBB901 /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F66E853D1D6AA0B600FBB901 /* MYOAViewController.swift in Sources */,
 				F66E85111D6A9EA300FBB901 /* ViewController.swift in Sources */,
 				F66E850F1D6A9EA300FBB901 /* AppDelegate.swift in Sources */,
 			);

@@ -1,25 +1,158 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MLM-Ar-kWz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="kgO-Us-Sbz">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="MLM-Ar-kWz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kIO-Mo-dkg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="toQ-fb-rhU" kind="relationship" relationship="rootViewController" id="aVQ-oI-Lbi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIN-Pg-eQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-138" y="343"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="amE-qP-Ndj">
+            <objects>
+                <viewController id="toQ-fb-rhU" customClass="MYOAViewController" customModule="Make_Your_Own_Adventure_The_Easy_Way" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="23z-If-5si"/>
+                        <viewControllerLayoutGuide type="bottom" id="fKp-LT-O2g"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="mv7-yZ-wpo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e64-Ug-pnt">
+                                <rect key="frame" x="20" y="64" width="560" height="243"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-0c-kgU">
+                                <rect key="frame" x="261" y="359" width="110" height="30"/>
+                                <state key="normal" title="Jump off bridge"/>
+                                <connections>
+                                    <segue destination="rMY-F4-32o" kind="show" id="Adt-fI-LQo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcf-ea-ID2">
+                                <rect key="frame" x="252" y="443" width="110" height="30"/>
+                                <state key="normal" title="run down tracks"/>
+                                <connections>
+                                    <segue destination="oAh-f3-g2R" kind="show" id="sZG-li-VO5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fKp-LT-O2g" firstAttribute="top" secondItem="e64-Ug-pnt" secondAttribute="bottom" constant="293" id="97N-wN-Cwg"/>
+                            <constraint firstItem="e64-Ug-pnt" firstAttribute="trailing" secondItem="mv7-yZ-wpo" secondAttribute="trailingMargin" id="Lbx-0s-ivc"/>
+                            <constraint firstItem="e64-Ug-pnt" firstAttribute="leading" secondItem="mv7-yZ-wpo" secondAttribute="leadingMargin" id="WxR-LW-FNG"/>
+                            <constraint firstItem="e64-Ug-pnt" firstAttribute="top" secondItem="23z-If-5si" secondAttribute="bottom" id="xQy-pH-tEo"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="PQU-CS-buy"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkA-0g-KIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="531" y="343"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IWG-Bx-xv0">
+            <objects>
+                <viewController id="rMY-F4-32o" customClass="MYOAViewController" customModule="Make_Your_Own_Adventure_The_Easy_Way" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yX9-0j-TSd"/>
+                        <viewControllerLayoutGuide type="bottom" id="lRk-Yk-Gm9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DlC-gA-KRX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-90-US2">
+                                <rect key="frame" x="20" y="64" width="560" height="243"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1s-5f-bB2">
+                                <rect key="frame" x="284" y="359" width="64" height="30"/>
+                                <state key="normal" title="Grab gun"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP3-zO-ka0">
+                                <rect key="frame" x="253" y="443" width="108" height="30"/>
+                                <state key="normal" title="lunge with knife"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eVa-90-US2" firstAttribute="top" secondItem="yX9-0j-TSd" secondAttribute="bottom" id="0Eu-x4-BXR"/>
+                            <constraint firstItem="eVa-90-US2" firstAttribute="leading" secondItem="DlC-gA-KRX" secondAttribute="leadingMargin" id="5fB-bF-chW"/>
+                            <constraint firstItem="eVa-90-US2" firstAttribute="trailing" secondItem="DlC-gA-KRX" secondAttribute="trailingMargin" id="beV-2S-AUq"/>
+                            <constraint firstItem="lRk-Yk-Gm9" firstAttribute="top" secondItem="eVa-90-US2" secondAttribute="bottom" constant="293" id="gsi-vn-7Kg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hKM-dc-7sU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5F-pN-x37" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="88"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CLe-N4-dO4">
+            <objects>
+                <viewController id="oAh-f3-g2R" customClass="MYOAViewController" customModule="Make_Your_Own_Adventure_The_Easy_Way" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BQa-PH-E9X"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ack-W3-CBf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m4H-IM-fRp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ed1-g8-Qq4">
+                                <rect key="frame" x="20" y="64" width="560" height="243"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m98-Hv-T3L">
+                                <rect key="frame" x="301" y="359" width="31" height="30"/>
+                                <state key="normal" title="Pray"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlG-yW-fAP">
+                                <rect key="frame" x="284" y="443" width="46" height="30"/>
+                                <state key="normal" title="Cough"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ed1-g8-Qq4" firstAttribute="trailing" secondItem="m4H-IM-fRp" secondAttribute="trailingMargin" id="2QM-Tr-Z4F"/>
+                            <constraint firstItem="Ed1-g8-Qq4" firstAttribute="leading" secondItem="m4H-IM-fRp" secondAttribute="leadingMargin" id="TB6-GY-cqW"/>
+                            <constraint firstItem="Ed1-g8-Qq4" firstAttribute="top" secondItem="BQa-PH-E9X" secondAttribute="bottom" id="dfP-Dt-rWa"/>
+                            <constraint firstItem="Ack-W3-CBf" firstAttribute="top" secondItem="Ed1-g8-Qq4" secondAttribute="bottom" constant="293" id="hRW-LP-a9H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NaF-eA-1gl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-Z0-bf5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1330" y="883"/>
         </scene>
     </scenes>
 </document>

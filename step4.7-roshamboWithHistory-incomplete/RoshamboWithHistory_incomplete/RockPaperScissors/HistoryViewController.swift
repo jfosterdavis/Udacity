@@ -22,16 +22,16 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell")!
         let historyEntry = self.history[indexPath.row]
         
-        // Set the name and image
+        // Set the name
         cell.textLabel?.text = historyResultString(historyEntry)
         print("Attempted to set label to")
         print(historyResultString(historyEntry))
         //cell.imageView?.image = UIImage(named: villain.imageName)
         
         // If the cell has a detail label, we will put the evil scheme in.
-        //if let detailTextLabel = cell.detailTextLabel {
-        //    detailTextLabel.text = "Scheme: \(villain.evilScheme)"
-        //}
+        if let detailTextLabel = cell.detailTextLabel {
+            detailTextLabel.text = detailResultsString(historyEntry)
+        }
         
         return cell
     }
@@ -44,5 +44,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource {
         else {
             return match.p1.defeats(match.p2) ? "Win!" : "Loss."
         }
+    }
+    
+    func detailResultsString(match: RPSMatch) -> String {
+        //call the method used during the actual match
+        let resultVC = ResultViewController()
+        return resultVC.messageForMatch(match)
     }
 }

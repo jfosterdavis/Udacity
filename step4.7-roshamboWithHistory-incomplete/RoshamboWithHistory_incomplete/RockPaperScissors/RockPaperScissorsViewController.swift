@@ -73,20 +73,21 @@ class RockPaperScissorsViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        switch (sender as! UIButton!) {
-        case self.rockButton, self.scissorsButton, self.paperButton:
-            //Notice that this code works for both Scissors and Paper
-            let controller = segue.destinationViewController as! ResultViewController
-            controller.match = self.match
-            
-        case self.historyButton:
-            //prepare the table for segue
-            let controller = segue.destinationViewController as! HistoryViewController
-            controller.history = self.history
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "throwDownPaper", "throwDownScissors":
+                //Notice that this code works for both Scissors and Paper
+                let controller = segue.destinationViewController as! ResultViewController
+                controller.match = self.match
+                
+            case "historySegue":
+                //prepare the table for segue
+                let controller = segue.destinationViewController as! HistoryViewController
+                controller.history = self.history
 
-        default:
-        assert(false, "An unknown button is invoking prepareForSegue()")
+            default:
+            assert(false, "An unknown button is invoking prepareForSegue()")
+            }
         }
     }
    

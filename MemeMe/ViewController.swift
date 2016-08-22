@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ImagePickerExperiment
 //
-//  Created by Jacob Foster Davis on 6/20/16.
+//  Created by Jacob Foster Davis on 8/22/16.
 //  Copyright © 2016 Zero Mu, LLC. All rights reserved.
 //
 

@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F66E850F1D6A9EA300FBB901 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E850E1D6A9EA300FBB901 /* AppDelegate.swift */; };
+		F66E85111D6A9EA300FBB901 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E85101D6A9EA300FBB901 /* ViewController.swift */; };
+		F66E85141D6A9EA300FBB901 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66E85121D6A9EA300FBB901 /* Main.storyboard */; };
+		F66E85161D6A9EA300FBB901 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66E85151D6A9EA300FBB901 /* Assets.xcassets */; };
+		F66E85191D6A9EA300FBB901 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66E85171D6A9EA300FBB901 /* LaunchScreen.storyboard */; };
+		F66E85241D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E85231D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift */; };
+		F66E852F1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66E852E1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F66E85201D6A9EA300FBB901 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F66E85031D6A9EA200FBB901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F66E850A1D6A9EA200FBB901;
+			remoteInfo = "Make Your Own Adventure The Easy Way";
+		};
+		F66E852B1D6A9EA300FBB901 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F66E85031D6A9EA200FBB901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F66E850A1D6A9EA200FBB901;
+			remoteInfo = "Make Your Own Adventure The Easy Way";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F66E850B1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make Your Own Adventure The Easy Way.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66E850E1D6A9EA300FBB901 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F66E85101D6A9EA300FBB901 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F66E85131D6A9EA300FBB901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F66E85151D6A9EA300FBB901 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F66E85181D6A9EA300FBB901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F66E851A1D6A9EA300FBB901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F66E851F1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Make Your Own Adventure The Easy WayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66E85231D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Your_Own_Adventure_The_Easy_WayTests.swift; sourceTree = "<group>"; };
+		F66E85251D6A9EA300FBB901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F66E852A1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Make Your Own Adventure The Easy WayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F66E852E1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make_Your_Own_Adventure_The_Easy_WayUITests.swift; sourceTree = "<group>"; };
+		F66E85301D6A9EA300FBB901 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F66E85081D6A9EA200FBB901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66E851C1D6A9EA300FBB901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66E85271D6A9EA300FBB901 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F66E85021D6A9EA200FBB901 = {
+			isa = PBXGroup;
+			children = (
+				F66E850D1D6A9EA300FBB901 /* Make Your Own Adventure The Easy Way */,
+				F66E85221D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests */,
+				F66E852D1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests */,
+				F66E850C1D6A9EA200FBB901 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F66E850C1D6A9EA200FBB901 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F66E850B1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way.app */,
+				F66E851F1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests.xctest */,
+				F66E852A1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F66E850D1D6A9EA300FBB901 /* Make Your Own Adventure The Easy Way */ = {
+			isa = PBXGroup;
+			children = (
+				F66E850E1D6A9EA300FBB901 /* AppDelegate.swift */,
+				F66E85101D6A9EA300FBB901 /* ViewController.swift */,
+				F66E85121D6A9EA300FBB901 /* Main.storyboard */,
+				F66E85151D6A9EA300FBB901 /* Assets.xcassets */,
+				F66E85171D6A9EA300FBB901 /* LaunchScreen.storyboard */,
+				F66E851A1D6A9EA300FBB901 /* Info.plist */,
+			);
+			path = "Make Your Own Adventure The Easy Way";
+			sourceTree = "<group>";
+		};
+		F66E85221D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests */ = {
+			isa = PBXGroup;
+			children = (
+				F66E85231D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift */,
+				F66E85251D6A9EA300FBB901 /* Info.plist */,
+			);
+			path = "Make Your Own Adventure The Easy WayTests";
+			sourceTree = "<group>";
+		};
+		F66E852D1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F66E852E1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift */,
+				F66E85301D6A9EA300FBB901 /* Info.plist */,
+			);
+			path = "Make Your Own Adventure The Easy WayUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F66E850A1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F66E85331D6A9EA300FBB901 /* Build configuration list for PBXNativeTarget "Make Your Own Adventure The Easy Way" */;
+			buildPhases = (
+				F66E85071D6A9EA200FBB901 /* Sources */,
+				F66E85081D6A9EA200FBB901 /* Frameworks */,
+				F66E85091D6A9EA200FBB901 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Make Your Own Adventure The Easy Way";
+			productName = "Make Your Own Adventure The Easy Way";
+			productReference = F66E850B1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F66E851E1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F66E85361D6A9EA300FBB901 /* Build configuration list for PBXNativeTarget "Make Your Own Adventure The Easy WayTests" */;
+			buildPhases = (
+				F66E851B1D6A9EA300FBB901 /* Sources */,
+				F66E851C1D6A9EA300FBB901 /* Frameworks */,
+				F66E851D1D6A9EA300FBB901 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F66E85211D6A9EA300FBB901 /* PBXTargetDependency */,
+			);
+			name = "Make Your Own Adventure The Easy WayTests";
+			productName = "Make Your Own Adventure The Easy WayTests";
+			productReference = F66E851F1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F66E85291D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F66E85391D6A9EA300FBB901 /* Build configuration list for PBXNativeTarget "Make Your Own Adventure The Easy WayUITests" */;
+			buildPhases = (
+				F66E85261D6A9EA300FBB901 /* Sources */,
+				F66E85271D6A9EA300FBB901 /* Frameworks */,
+				F66E85281D6A9EA300FBB901 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F66E852C1D6A9EA300FBB901 /* PBXTargetDependency */,
+			);
+			name = "Make Your Own Adventure The Easy WayUITests";
+			productName = "Make Your Own Adventure The Easy WayUITests";
+			productReference = F66E852A1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F66E85031D6A9EA200FBB901 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Zero Mu, LLC";
+				TargetAttributes = {
+					F66E850A1D6A9EA200FBB901 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 37R6UV3BWH;
+					};
+					F66E851E1D6A9EA300FBB901 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 37R6UV3BWH;
+						TestTargetID = F66E850A1D6A9EA200FBB901;
+					};
+					F66E85291D6A9EA300FBB901 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 37R6UV3BWH;
+						TestTargetID = F66E850A1D6A9EA200FBB901;
+					};
+				};
+			};
+			buildConfigurationList = F66E85061D6A9EA200FBB901 /* Build configuration list for PBXProject "Make Your Own Adventure The Easy Way" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F66E85021D6A9EA200FBB901;
+			productRefGroup = F66E850C1D6A9EA200FBB901 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F66E850A1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way */,
+				F66E851E1D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayTests */,
+				F66E85291D6A9EA300FBB901 /* Make Your Own Adventure The Easy WayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F66E85091D6A9EA200FBB901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F66E85191D6A9EA300FBB901 /* LaunchScreen.storyboard in Resources */,
+				F66E85161D6A9EA300FBB901 /* Assets.xcassets in Resources */,
+				F66E85141D6A9EA300FBB901 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66E851D1D6A9EA300FBB901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66E85281D6A9EA300FBB901 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F66E85071D6A9EA200FBB901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F66E85111D6A9EA300FBB901 /* ViewController.swift in Sources */,
+				F66E850F1D6A9EA300FBB901 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66E851B1D6A9EA300FBB901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F66E85241D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F66E85261D6A9EA300FBB901 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F66E852F1D6A9EA300FBB901 /* Make_Your_Own_Adventure_The_Easy_WayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F66E85211D6A9EA300FBB901 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F66E850A1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way */;
+			targetProxy = F66E85201D6A9EA300FBB901 /* PBXContainerItemProxy */;
+		};
+		F66E852C1D6A9EA300FBB901 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F66E850A1D6A9EA200FBB901 /* Make Your Own Adventure The Easy Way */;
+			targetProxy = F66E852B1D6A9EA300FBB901 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F66E85121D6A9EA300FBB901 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F66E85131D6A9EA300FBB901 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F66E85171D6A9EA300FBB901 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F66E85181D6A9EA300FBB901 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F66E85311D6A9EA300FBB901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F66E85321D6A9EA300FBB901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F66E85341D6A9EA300FBB901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Make Your Own Adventure The Easy Way/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeromu.Make-Your-Own-Adventure-The-Easy-Way";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F66E85351D6A9EA300FBB901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Make Your Own Adventure The Easy Way/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeromu.Make-Your-Own-Adventure-The-Easy-Way";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F66E85371D6A9EA300FBB901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Make Your Own Adventure The Easy WayTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeromu.Make-Your-Own-Adventure-The-Easy-WayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Make Your Own Adventure The Easy Way.app/Make Your Own Adventure The Easy Way";
+			};
+			name = Debug;
+		};
+		F66E85381D6A9EA300FBB901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Make Your Own Adventure The Easy WayTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeromu.Make-Your-Own-Adventure-The-Easy-WayTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Make Your Own Adventure The Easy Way.app/Make Your Own Adventure The Easy Way";
+			};
+			name = Release;
+		};
+		F66E853A1D6A9EA300FBB901 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Make Your Own Adventure The Easy WayUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeromu.Make-Your-Own-Adventure-The-Easy-WayUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Make Your Own Adventure The Easy Way";
+			};
+			name = Debug;
+		};
+		F66E853B1D6A9EA300FBB901 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Make Your Own Adventure The Easy WayUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeromu.Make-Your-Own-Adventure-The-Easy-WayUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Make Your Own Adventure The Easy Way";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F66E85061D6A9EA200FBB901 /* Build configuration list for PBXProject "Make Your Own Adventure The Easy Way" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F66E85311D6A9EA300FBB901 /* Debug */,
+				F66E85321D6A9EA300FBB901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F66E85331D6A9EA300FBB901 /* Build configuration list for PBXNativeTarget "Make Your Own Adventure The Easy Way" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F66E85341D6A9EA300FBB901 /* Debug */,
+				F66E85351D6A9EA300FBB901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F66E85361D6A9EA300FBB901 /* Build configuration list for PBXNativeTarget "Make Your Own Adventure The Easy WayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F66E85371D6A9EA300FBB901 /* Debug */,
+				F66E85381D6A9EA300FBB901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F66E85391D6A9EA300FBB901 /* Build configuration list for PBXNativeTarget "Make Your Own Adventure The Easy WayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F66E853A1D6A9EA300FBB901 /* Debug */,
+				F66E853B1D6A9EA300FBB901 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F66E85031D6A9EA200FBB901 /* Project object */;
+}

@@ -1,8 +1,8 @@
 //
 //  Meme.swift
-//  MemeMe
+//  MemeMe 2.0
 //
-//  Created by Jacob Foster Davis on 7/9/16.
+//  Created by Jacob Foster Davis on 8/22/16.
 //  Copyright © 2016 Zero Mu, LLC. All rights reserved.
 //
 

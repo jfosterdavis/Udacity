@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeViewController.swift
 //  MemeMe 2.0
 //
 //  Created by Jacob Foster Davis on 8/22/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     
     @IBOutlet weak var imagePickerView: UIImageView!
@@ -122,8 +122,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {

@@ -241,6 +241,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //reset buttons
         setButtonsEnabled(false)
+        
+        //dismiss to return to previous view controller
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func saveToPhotosAlbum(sender: AnyObject) {

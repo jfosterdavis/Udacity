@@ -46,5 +46,13 @@ class MemeCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    
+    //When a user selects an item from the collection
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let meme = self.sharedMemes[indexPath.row]
+        print("about to show detail from the collection view for meme at indexPath: ",indexPath.row)
+        detailController.meme = meme
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+    }
 }

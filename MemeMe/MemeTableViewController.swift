@@ -51,7 +51,7 @@ class MemeTableViewController: UITableViewController {
         return cell
     }
 
-    //if I add function to happen when I select a row it will go here.
+    //When a user selects an item from the table
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
       let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         let meme = self.sharedMemes[indexPath.row]

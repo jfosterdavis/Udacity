@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="-517" y="472"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Meme Table View Controller-->
         <scene sceneID="bk5-Xw-FTm">
             <objects>
-                <tableViewController id="H6E-rg-y4m" sceneMemberID="viewController">
+                <tableViewController id="H6E-rg-y4m" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x2m-TW-0b5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
         <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MemeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -244,14 +244,14 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="bottomTextField" destination="9gT-FW-h5V" id="bqj-E9-DrU"/>
+                        <outlet property="bottomTextField" destination="9gT-FW-h5V" id="ZCh-23-D6w"/>
                         <outlet property="cameraButton" destination="lN2-k9-YXL" id="3FI-Vc-Si4"/>
                         <outlet property="imagePickerView" destination="C2o-8z-TDc" id="2f4-BO-8Wf"/>
                         <outlet property="navBar" destination="4YZ-Gw-X3n" id="I2g-Qw-Hbv"/>
                         <outlet property="saveButton" destination="cph-rO-2rT" id="zUP-6M-NeL"/>
                         <outlet property="shareButton" destination="C44-Uv-ATG" id="Mbk-PH-ZYK"/>
                         <outlet property="topBar" destination="VQM-7Y-tDz" id="vOb-Uz-w0L"/>
-                        <outlet property="topTextField" destination="kd1-zZ-cCp" id="YOd-Qy-8mr"/>
+                        <outlet property="topTextField" destination="kd1-zZ-cCp" id="R4q-ej-av5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

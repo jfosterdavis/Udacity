@@ -16,14 +16,25 @@ class MemeTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).sharedMemes
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //refresh the data
+        //realized I had to do this from forums and from Olivia Murphy code 
+        //https://github.com/onmurphy/MemeMe/blob/master/MemeMe/TableViewController.swift
+        self.tableView.reloadData()
+    }
     
     // MARK: Table View Data Source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("There are ", String(self.sharedMemes.count), " shared Memes")
         return self.sharedMemes.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        print("From cellForRowAtIndexPath.  There are ", String(self.sharedMemes.count), " shared Memes")
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell")!
         let meme = self.sharedMemes[indexPath.row]

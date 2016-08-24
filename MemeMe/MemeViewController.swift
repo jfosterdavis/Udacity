@@ -197,7 +197,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     //run the in-app save method
                     self.save()
                     
-                    //UIImageWriteToSavedPhotosAlbum(self.currentMeme.memedImage, nil, nil, nil);
                 } else {
                     //user pressed cancel
                     //do nothing because we assume the user knew that pressing cancel wouldn't save
@@ -211,6 +210,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     
     func save(useThisImage: UIImage?=nil) {
+        
+        print("save() was called")
         //initialize the image we will save as the meme
         var memedImage: UIImage
         
@@ -232,7 +233,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.sharedMemes.append(meme)
         
-        //print(meme)
+        print("End of save(). There are ", String(appDelegate.sharedMemes.count), " shared Memes")
         
     }
     

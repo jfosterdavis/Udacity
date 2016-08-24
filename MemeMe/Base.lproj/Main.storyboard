@@ -135,7 +135,7 @@
             </objects>
             <point key="canvasLocation" x="211" y="-383"/>
         </scene>
-        <!--View Controller-->
+        <!--Meme View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MemeViewController" sceneMemberID="viewController">

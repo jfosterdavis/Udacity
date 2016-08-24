@@ -52,12 +52,13 @@ class MemeTableViewController: UITableViewController {
     }
 
     //if I add function to happen when I select a row it will go here.
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("VillainDetailViewController") as! VillainDetailViewController
-//        detailController.villain = self.allVillains[indexPath.row]
-//        self.navigationController!.pushViewController(detailController, animated: true)
-//        
-//    }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      let detailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
+        let meme = self.sharedMemes[indexPath.row]
+        print("about to show detail for meme at indexPath: ",indexPath.row)
+        detailController.meme = meme
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+    }
     
 }

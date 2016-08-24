@@ -228,6 +228,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         currentMeme = meme
         
+        //now save this meme to the shared memes in the AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.sharedMemes.append(meme)
+        
         //print(meme)
         
     }

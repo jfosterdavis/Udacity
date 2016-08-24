@@ -254,7 +254,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func saveToPhotosAlbum(sender: AnyObject) {
         save()
         
-        UIImageWriteToSavedPhotosAlbum(currentMeme.memedImage, nil, nil, nil);
+        //don't actually save this to the photos album for MemeMe2.0
+        //UIImageWriteToSavedPhotosAlbum(currentMeme.memedImage, nil, nil, nil);
     }
     
     

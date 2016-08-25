@@ -12,6 +12,7 @@ import UIKit
 class MemeDetailViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     var meme: Meme!
     
@@ -68,6 +69,23 @@ class MemeDetailViewController: UIViewController {
         }
         //eiter way, go for it
         self.imageView!.image = meme.memedImage
+    }
+    
+    //allow user to share the meme from the saved view.  No need to save because it already is.
+    @IBAction func pushShareButton(sender: AnyObject) {
+        //define instance of ActivityViewController and pass the memedImage as activity item
+        let controller = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
+        // This is for future use to detect if user pressed cancel
+        controller.completionWithItemsHandler = {
+            (activityType: String?, completed: Bool, returnedItems: [AnyObject]?, error: NSError?) ->Void in
+            if completed {
+                //for future use
+            } else {
+                //for future use
+            }
+        }
+        //present the Acvitity View Controller
+        presentViewController(controller, animated: true, completion: nil)
     }
     
 }

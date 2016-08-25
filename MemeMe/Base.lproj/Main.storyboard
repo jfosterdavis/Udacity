@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -297,14 +298,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mxz-tc-OYy">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="auh-EF-sTV">
-                            <connections>
-                                <action selector="sendThisMemeToMemeEditorViewController" destination="YsX-nj-b5d" id="m0c-VO-VXn"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="auh-EF-sTV">
+                                <connections>
+                                    <action selector="sendThisMemeToMemeEditorViewController" destination="YsX-nj-b5d" id="m0c-VO-VXn"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="7sN-UU-Pmv">
+                                <connections>
+                                    <action selector="pushShareButton:" destination="YsX-nj-b5d" id="48M-F1-mDS"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="rh0-jC-1XY" id="OaN-aG-uIf"/>
+                        <outlet property="shareButton" destination="7sN-UU-Pmv" id="FiT-oY-rwA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ves-03-Rf3" userLabel="First Responder" sceneMemberID="firstResponder"/>

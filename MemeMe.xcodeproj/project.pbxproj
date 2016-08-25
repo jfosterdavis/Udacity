@@ -22,6 +22,7 @@
 		F68BE14A1D6E6BDB00B081B5 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BE1491D6E6BDB00B081B5 /* MemeEditorViewController.swift */; };
 		F68BE14C1D6EC9FC00B081B5 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = F68BE14B1D6EC9FC00B081B5 /* Assets */; };
 		F68BE1561D6EE68400B081B5 /* UIImagePickerController+SupportedOrientations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68BE1551D6EE68400B081B5 /* UIImagePickerController+SupportedOrientations.swift */; };
+		F68BE1581D6F010600B081B5 /* impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F68BE1571D6F010600B081B5 /* impact.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F68BE1491D6E6BDB00B081B5 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
 		F68BE14B1D6EC9FC00B081B5 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		F68BE1551D6EE68400B081B5 /* UIImagePickerController+SupportedOrientations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+SupportedOrientations.swift"; sourceTree = "<group>"; };
+		F68BE1571D6F010600B081B5 /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				F65F4F341D18FCD0000F9509 /* MemeViewController.swift */,
 				F68BE1551D6EE68400B081B5 /* UIImagePickerController+SupportedOrientations.swift */,
 				F65F4F361D18FCD0000F9509 /* Main.storyboard */,
+				F68BE1571D6F010600B081B5 /* impact.ttf */,
 				F68BE1491D6E6BDB00B081B5 /* MemeEditorViewController.swift */,
 				F68BE1431D6D5FD600B081B5 /* CustomMemeCollectionViewCell.swift */,
 				F68BE1411D6D5B7900B081B5 /* MemeCollectionViewController.swift */,
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68BE1581D6F010600B081B5 /* impact.ttf in Resources */,
 				F68BE14C1D6EC9FC00B081B5 /* Assets in Resources */,
 				F65F4F3A1D18FCD0000F9509 /* Assets.xcassets in Resources */,
 				F65F4F381D18FCD0000F9509 /* Main.storyboard in Resources */,

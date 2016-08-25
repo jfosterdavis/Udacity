@@ -51,33 +51,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //load text defaults
         resetTextFields()
         
-    }
-    
-    func resetTextFields(){
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        
-        //set the text field attributes
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .Center
-        
-        let memeTextAttributes = [
-            NSStrokeColorAttributeName : UIColor.blackColor(),
-            NSForegroundColorAttributeName : UIColor.whiteColor(),
-            NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : -4.0,
-            NSParagraphStyleAttributeName: paragraphStyle
-        ]
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-    }
-    
-    override func viewWillAppear(animated: Bool){
-        super.viewWillAppear(animated)
-        
-        //subscribe to keyboard notifications
-        self.subscribeToKeyboardNotifications()
-        
         //if this is an edit session, then load up the view
         if isEditMode{
             print("ViewMemeController is in edit mode")
@@ -107,8 +80,38 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             } else { //there is no image so keep the buttons false
                 setButtonsEnabled(false)
             }
-
+            
         }
+        
+    }
+    
+    func resetTextFields(){
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        
+        //set the text field attributes
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .Center
+        
+        //Impact font solution from http://codewithchris.com/common-mistakes-with-adding-custom-fonts-to-your-ios-app/
+        let memeTextAttributes = [
+            NSStrokeColorAttributeName : UIColor.blackColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
+            NSStrokeWidthAttributeName : -4.0,
+            NSParagraphStyleAttributeName: paragraphStyle
+        ]
+        topTextField.defaultTextAttributes = memeTextAttributes
+        bottomTextField.defaultTextAttributes = memeTextAttributes
+    }
+    
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        
+        //subscribe to keyboard notifications
+        self.subscribeToKeyboardNotifications()
+        
+
         
         
     }
@@ -121,7 +124,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidDisappear(animated: Bool) {
         //make sure editsession is reset
-        isEditMode = false
+        //isEditMode = false
         
         //Don't clear the image - don't do this
         //imagePickerView.image = nil

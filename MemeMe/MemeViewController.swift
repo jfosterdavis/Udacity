@@ -180,7 +180,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                                didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("imagePickerController was called")
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
             print("an image was passed to ViewController")
             imagePickerView.image = image
             //ensure the buttons are enabled
@@ -219,7 +219,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     func pickAnImageFrom(sender: AnyObject, source: UIImagePickerControllerSourceType) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        //specify that the picture will come from the camera
+        //allow editing of the image
+        pickerController.allowsEditing = true
         pickerController.sourceType = source
         presentViewController(pickerController, animated: true, completion: nil)
     }

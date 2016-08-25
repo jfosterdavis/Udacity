@@ -90,10 +90,16 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 
                 //ensure the buttons are enabled
                 setButtonsEnabled(true)
+                
+                //set navigation title
+                //self.navigationItem.title = "Edit Meme"
             } else{
                 print("Trying to edit but the meme isn't there!!")
             }
         } else {  //this is not edit mode so make sure everything is where it should be
+            
+            //set navigation title
+            //self.navigationItem.title = "Create Meme"
             
             //set up buttons if there is an image in the ImageView
             if self.imagePickerView.image != nil{ //if there is no image the user hasn't picked on or this is first time loaded

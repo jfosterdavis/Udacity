@@ -11,9 +11,47 @@ import UIKit
 
 class MemeCollectionViewController: UICollectionViewController {
     
+    //flow layout
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     //Set a pointer to the sharedMemes
     var sharedMemes: [Meme]{
         return (UIApplication.sharedApplication().delegate as! AppDelegate).sharedMemes
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let space: CGFloat!
+        let dimension: CGFloat!
+        
+        //following layout approach adapted from
+        //http://stackoverflow.com/questions/34132766/uicollectionview-resizing-cells-on-device-rotate-swift
+        //http://swiftiostutorials.com/tutorial-using-uicollectionview-uicollectionviewflowlayout/
+        if UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation) { //If landscape mode
+            //implement flow layout
+            space = 3.0
+            // have 4 items across if in landscape
+            let numberOfItems: CGFloat = 4
+            let spacingConstant: CGFloat = numberOfItems - 1
+            dimension = (self.view.frame.size.width - (2 * space) - (spacingConstant * space)) / numberOfItems
+        } else { //if portrait mode
+            //implement flow layout
+            space = 3.0
+            // have 3 items across if in portrait
+            let numberOfItems: CGFloat = 3
+            let spacingConstant: CGFloat = numberOfItems - 1
+            dimension = (self.view.frame.size.width - (2 * space) - (spacingConstant * space)) / numberOfItems
+        }
+        //set the flowLayout based on new values
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.sectionInset = UIEdgeInsets(top: space, left: space, bottom: space, right: space)
+        flowLayout.itemSize = CGSizeMake(dimension, dimension)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -34,7 +72,7 @@ class MemeCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        print("From cellForItemAtIndexPath.  There are ", String(self.sharedMemes.count), " shared Memes")
+        //print("From cellForItemAtIndexPath.  There are ", String(self.sharedMemes.count), " shared Memes")
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCollectionCell", forIndexPath: indexPath) as! CustomMemeCollectionViewCell
         let meme = self.sharedMemes[indexPath.row]

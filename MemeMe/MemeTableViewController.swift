@@ -34,13 +34,14 @@ class MemeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        print("From cellForRowAtIndexPath.  There are ", String(self.sharedMemes.count), " shared Memes")
+        //print("From cellForRowAtIndexPath.  There are ", String(self.sharedMemes.count), " shared Memes")
         
         let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell")!
         let meme = self.sharedMemes[indexPath.row]
         
         // Set the name and image
-        cell.textLabel?.text = (meme.topText as String) + " " + (meme.bottomText as String)
+        cell.textLabel?.text = (meme.topText as String)
+        cell.detailTextLabel?.text = (meme.bottomText as String)
         cell.imageView?.image = meme.memedImage
         
         // If the cell has a detail label, we will put the evil scheme in.

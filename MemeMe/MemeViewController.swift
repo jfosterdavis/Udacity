@@ -10,28 +10,30 @@ import UIKit
 
 class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    
+    //The image displayed
     @IBOutlet weak var imagePickerView: UIImageView!
     
+    //buttons and bars
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-    @IBOutlet weak var topTextField: UITextField!
-    @IBOutlet weak var bottomTextField: UITextField!
-    
-    
-
     @IBOutlet weak var topBar: UIToolbar!
     @IBOutlet weak var navBar: UIToolbar!
     
-    
+    //Text fields for user input
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+
+    //The Meme object used within this class
     var currentMeme: Meme!
-    //this comment added to commit
+    
     //Delegate Objects
     let textFieldDelegate = MemeTextFieldDelegate()
     
-
+    //objects needed for editing features
+    var isEditSession: Bool = false //unless specified, will not edit a current meme
+    var memeToEdit: Meme? //if this is an edit session, a meme should have been passed
+    var indexPath: NSIndexPath? //if this is an edit session, should have been given an indexPath from the shared model
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +46,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //set up the text fields
         resetTextFields()
-        
-        //center text
-        //I was told this is redundant in my last Udacity Review, but I can't figure out how to set the alignment using the .defaultTextAttributes
-        //topTextField.textAlignment = NSTextAlignment.Center
-        //bottomTextField.textAlignment = NSTextAlignment.Center
         
         //set up buttons
         setButtonsEnabled(false)
@@ -79,6 +76,18 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         //subscribe to keyboard notifications
         self.subscribeToKeyboardNotifications()
+        
+        //if this is an edit session, then load up the view
+        if isEditSession{
+            if let unwrappedMemeToEdit = memeToEdit{
+                //load the Meme
+                self.topTextField.text = unwrappedMemeToEdit.topText as String
+                self.bottomTextField.text = unwrappedMemeToEdit.bottomText as String
+                self.imagePickerView.image = unwrappedMemeToEdit.image
+            } else{
+                print("Trying to edit but the meme isn't there")
+            }
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {

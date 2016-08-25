@@ -57,6 +57,8 @@ class MemeTableViewController: UITableViewController {
         let meme = self.sharedMemes[indexPath.row]
         print("about to show detail for meme at indexPath: ",indexPath.row)
         detailController.meme = meme
+        //tell the detail contorller where this meme belongs in the shared model in case user wants to edit
+        detailController.indexPath = indexPath
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }

@@ -296,7 +296,13 @@
                             <constraint firstAttribute="trailing" secondItem="rh0-jC-1XY" secondAttribute="trailing" id="rGd-pO-ku6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mxz-tc-OYy"/>
+                    <navigationItem key="navigationItem" id="mxz-tc-OYy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="auh-EF-sTV">
+                            <connections>
+                                <action selector="sendThisMemeToMemeEditorViewController" destination="YsX-nj-b5d" id="m0c-VO-VXn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="rh0-jC-1XY" id="OaN-aG-uIf"/>
                     </connections>
@@ -307,6 +313,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9ym-Ys-yiM"/>
+        <segue reference="rhA-s4-k2m"/>
     </inferredMetricsTieBreakers>
 </document>

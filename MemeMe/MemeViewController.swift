@@ -31,7 +31,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let textFieldDelegate = MemeTextFieldDelegate()
     
     //objects needed for editing features
-    var isEditSession: Bool = false //unless specified, will not edit a current meme
+    var isEditMode: Bool = false //unless specified, will not edit a current meme
     var memeToEdit: Meme? //if this is an edit session, a meme should have been passed
     var indexPath: NSIndexPath? //if this is an edit session, should have been given an indexPath from the shared model
     
@@ -78,7 +78,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.subscribeToKeyboardNotifications()
         
         //if this is an edit session, then load up the view
-        if isEditSession{
+        if isEditMode{
+            print("ViewMemeController is in edit mode")
             if let unwrappedMemeToEdit = memeToEdit{
                 //load the Meme
                 self.topTextField.text = unwrappedMemeToEdit.topText as String
@@ -93,6 +94,9 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.unsubscribeFromKeyboardNotifications()
+        
+        //make sure editsession is reset
+        isEditMode = false
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {

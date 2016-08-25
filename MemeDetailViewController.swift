@@ -35,13 +35,16 @@ class MemeDetailViewController: UIViewController {
     }
     
     //Allows user to send the current meme to the meme editor
-//    @IBAction func sendThisMemeToMemeEditorViewController(){
-//        let editorController = MemeEditorViewController()
-//        //set the editors meme and index for the shared model
-//        editorController.memeToEdit = self.meme
-//        editorController.indexPath = self.indexPath
-//        print("about to send a meme to the editor for meme at indexPath: ",indexPath.row)
-//        self.navigationController!.pushViewController(editorController, animated: true)
-//    }
+    @IBAction func sendThisMemeToMemeEditorViewController(){
+        let editorController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeViewController") as! MemeViewController
+        //set the editors meme and index for the shared model
+        editorController.memeToEdit = self.meme
+        editorController.indexPath = self.indexPath
+        //tell the editor that this will be an editing session
+        editorController.isEditMode = true
+        print("about to send a meme to the editor for meme at indexPath: ",indexPath.row)
+        //present modally
+        self.presentViewController(editorController, animated: true, completion: nil)
+    }
     
 }

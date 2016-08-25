@@ -16,6 +16,13 @@ class MemeTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).sharedMemes
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //add the special edit button that I can't figure out how to add via storyboard
+        navigationItem.leftBarButtonItem = editButtonItem()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -34,7 +41,8 @@ class MemeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             deleteMeme(indexPath)
-            self.tableView.reloadData()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //self.tableView.reloadData()
         }
     }
     

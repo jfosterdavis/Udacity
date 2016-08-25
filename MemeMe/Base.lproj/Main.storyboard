@@ -82,7 +82,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sent" id="SZp-tD-8Qa">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Ze4-0d-3MP"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4HY-eI-pvE">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="rhA-s4-k2m"/>
@@ -329,6 +328,6 @@
         <image name="TableTabImageSet" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yG7-pj-wQ5"/>
+        <segue reference="rhA-s4-k2m"/>
     </inferredMetricsTieBreakers>
 </document>

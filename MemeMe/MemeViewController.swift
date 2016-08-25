@@ -48,11 +48,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.topTextField.delegate = textFieldDelegate
         self.bottomTextField.delegate = textFieldDelegate
         
-        //set up the text fields
+        //load text defaults
         resetTextFields()
-        
-        //set up buttons
-        setButtonsEnabled(false)
         
     }
     
@@ -86,6 +83,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("ViewMemeController is in edit mode")
             if let unwrappedMemeToEdit = memeToEdit{
                 //load the Meme
+                self.currentMeme = unwrappedMemeToEdit
                 self.topTextField.text = unwrappedMemeToEdit.topText as String
                 self.bottomTextField.text = unwrappedMemeToEdit.bottomText as String
                 self.imagePickerView.image = unwrappedMemeToEdit.image
@@ -95,7 +93,18 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             } else{
                 print("Trying to edit but the meme isn't there!!")
             }
+        } else {  //this is not edit mode so make sure everything is where it should be
+            
+            //set up buttons if there is an image in the ImageView
+            if self.imagePickerView.image != nil{ //if there is no image the user hasn't picked on or this is first time loaded
+                setButtonsEnabled(true)
+            } else { //there is no image so keep the buttons false
+                setButtonsEnabled(false)
+            }
+
         }
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -108,14 +117,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //make sure editsession is reset
         isEditMode = false
         
-        //clear the image and text
-        imagePickerView.image = nil
+        //Don't clear the image - don't do this
+        //imagePickerView.image = nil
         
-        //reset text
-        resetTextFields()
-        
-        //reset buttons
-        setButtonsEnabled(false)
+        //reset buttons - don't do this
+        //setButtonsEnabled(false)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -288,8 +294,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func saveToPhotosAlbum(sender: AnyObject) {
         save()
         
-        //don't actually save this to the photos album for MemeMe2.0
-        //UIImageWriteToSavedPhotosAlbum(currentMeme.memedImage, nil, nil, nil);
+        //user pressed save, so close this viewController
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     

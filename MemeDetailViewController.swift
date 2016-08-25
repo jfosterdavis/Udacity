@@ -61,7 +61,12 @@ class MemeDetailViewController: UIViewController {
     }
     
     func loadImage(){
-        meme = sharedMemes[indexPath.row]
+        //Should have been passed an indexPath
+        if let unwrappedIndexPath = indexPath{
+            //this will allow the view to reload once it has been edited
+            meme = sharedMemes[unwrappedIndexPath.row]
+        }
+        //eiter way, go for it
         self.imageView!.image = meme.memedImage
     }
     

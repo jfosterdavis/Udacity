@@ -25,6 +25,26 @@ class MemeTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    //add swipe to delete function adapted from
+    //http://stackoverflow.com/questions/24103069/swift-add-swipe-to-delete-tableviewcell
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            deleteMeme(indexPath)
+            self.tableView.reloadData()
+        }
+    }
+    
+    func deleteMeme(atIndexPath: NSIndexPath){
+        print("About to delete meme at index: ", atIndexPath.row)
+        //get an app delegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.sharedMemes.removeAtIndex(atIndexPath.row)
+    }
+    
     // MARK: Table View Data Source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

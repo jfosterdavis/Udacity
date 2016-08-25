@@ -23,6 +23,8 @@ class MemeCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
     }
     
+
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         

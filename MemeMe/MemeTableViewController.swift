@@ -40,7 +40,9 @@ class MemeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            //delete the meme from the Model
             deleteMeme(indexPath)
+            //fade the row away.  From iOS Developer Library
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             //self.tableView.reloadData()
         }

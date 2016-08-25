@@ -14,17 +14,28 @@ class MemeDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var meme: Meme!
+    
+    //Needed for editing in place
     //indexPath is a way for the detailViewController to know where this meme belongs in the shared model
     var indexPath: NSIndexPath!
+    //Set a pointer to the sharedMemes
+    var sharedMemes: [Meme]{
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).sharedMemes
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         //hide the tab bar to see more of the meme
         self.tabBarController?.tabBar.hidden = true
         
-        //set the image
-        self.imageView!.image = meme.memedImage
+        //set the image.  This will also refresh if the image was edited
+        loadImage()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     override func viewWillDisappear(animated:Bool){
@@ -32,6 +43,7 @@ class MemeDetailViewController: UIViewController {
         
         //show the tab bar
         self.tabBarController?.tabBar.hidden = false
+        
     }
     
     //Allows user to send the current meme to the meme editor
@@ -45,6 +57,12 @@ class MemeDetailViewController: UIViewController {
         print("about to send a meme to the editor for meme at indexPath: ",indexPath.row)
         //present modally
         self.presentViewController(editorController, animated: true, completion: nil)
+        
+    }
+    
+    func loadImage(){
+        meme = sharedMemes[indexPath.row]
+        self.imageView!.image = meme.memedImage
     }
     
 }

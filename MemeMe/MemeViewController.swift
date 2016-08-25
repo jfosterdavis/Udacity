@@ -34,6 +34,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var isEditMode: Bool = false //unless specified, will not edit a current meme
     var memeToEdit: Meme? //if this is an edit session, a meme should have been passed
     var indexPath: NSIndexPath? //if this is an edit session, should have been given an indexPath from the shared model
+    //Set a pointer to the sharedMemes
+    var sharedMemes: [Meme]{
+        return (UIApplication.sharedApplication().delegate as! AppDelegate).sharedMemes
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,8 +89,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.topTextField.text = unwrappedMemeToEdit.topText as String
                 self.bottomTextField.text = unwrappedMemeToEdit.bottomText as String
                 self.imagePickerView.image = unwrappedMemeToEdit.image
+                
+                //ensure the buttons are enabled
+                setButtonsEnabled(true)
             } else{
-                print("Trying to edit but the meme isn't there")
+                print("Trying to edit but the meme isn't there!!")
             }
         }
     }
@@ -95,8 +102,20 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewWillDisappear(animated)
         self.unsubscribeFromKeyboardNotifications()
         
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
         //make sure editsession is reset
         isEditMode = false
+        
+        //clear the image and text
+        imagePickerView.image = nil
+        
+        //reset text
+        resetTextFields()
+        
+        //reset buttons
+        setButtonsEnabled(false)
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -170,7 +189,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             
         }
         
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -217,13 +235,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
         //present the Acvitity View Controller
         presentViewController(controller, animated: true, completion: nil)
-        
-        //now send the meme
     }
 
     
     func save(useThisImage: UIImage?=nil) {
-        
         print("save() was called")
         //initialize the image we will save as the meme
         var memedImage: UIImage
@@ -237,31 +252,37 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             memedImage = generateMemedImage()
         }
         
-        
+        //create a Meme object
         let meme = Meme( topText: topTextField.text!, bottomText: bottomTextField.text!, image: imagePickerView.image!, memedImage: memedImage)
-        
+        //set working copy meme
         currentMeme = meme
         
-        //now save this meme to the shared memes in the AppDelegate
+        //get an app delegate
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.sharedMemes.append(meme)
         
-        print("End of save(). There are ", String(appDelegate.sharedMemes.count), " shared Memes")
-        
+        //edit or normal mode?
+        if isEditMode{ //in edit mode, we will replace the meme at the indicated indexPath
+            print("Saving in Edit mode. There are ", String(appDelegate.sharedMemes.count), " shared Memes")
+            if let unwrappedIndexPath = indexPath{ //unwrap the indexPath
+                //replace the meme at indexPath with the new meme we just created
+                appDelegate.sharedMemes[unwrappedIndexPath.row] = currentMeme
+            }
+            
+            print("Done saving in Edit mode. There are ", String(appDelegate.sharedMemes.count), " shared Memes")
+        } else {  //Not in edit mode, so do the normal stuff
+            //add the meme we just created to the shared model
+            appDelegate.sharedMemes.append(meme)
+            
+            print("End of save(). There are ", String(appDelegate.sharedMemes.count), " shared Memes")
+        }
     }
     
     @IBAction func cancel(sender: AnyObject){
-        //clear the image and text
-        imagePickerView.image = nil
-        
-        //reset text
-        resetTextFields()
-        
-        //reset buttons
-        setButtonsEnabled(false)
+
         
         //dismiss to return to previous view controller
         dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     @IBAction func saveToPhotosAlbum(sender: AnyObject) {

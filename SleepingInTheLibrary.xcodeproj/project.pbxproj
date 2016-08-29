@@ -14,6 +14,7 @@
 		A9DB69281BE93261005E6ADD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9DB69271BE93261005E6ADD /* Assets.xcassets */; };
 		A9DB69571BE96E2E005E6ADD /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB69561BE96E2E005E6ADD /* GCDBlackBox.swift */; };
 		A9FA134D1D1AB71300B5F46E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9FA134B1D1AB71300B5F46E /* LaunchScreen.xib */; };
+		F60F6D001D74153E0025E6FB /* secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F6CFF1D74153E0025E6FB /* secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A9DB692C1BE93261005E6ADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9DB69561BE96E2E005E6ADD /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		A9FA134C1D1AB71300B5F46E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F60F6CFF1D74153E0025E6FB /* secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				A9DB69201BE93261005E6ADD /* AppDelegate.swift */,
 				A9DB69221BE93261005E6ADD /* ViewController.swift */,
 				A9A3A21D1BEBCFDA009BE8E1 /* Constants.swift */,
+				F60F6CFF1D74153E0025E6FB /* secrets.swift */,
 				A9DB69561BE96E2E005E6ADD /* GCDBlackBox.swift */,
 				A9DB69321BE93B41005E6ADD /* Assets */,
 				A9DB69331BE93B53005E6ADD /* Supporting Files */,
@@ -159,6 +162,7 @@
 			files = (
 				A9DB69231BE93261005E6ADD /* ViewController.swift in Sources */,
 				A9DB69571BE96E2E005E6ADD /* GCDBlackBox.swift in Sources */,
+				F60F6D001D74153E0025E6FB /* secrets.swift in Sources */,
 				A9DB69211BE93261005E6ADD /* AppDelegate.swift in Sources */,
 				A9A3A21E1BEBCFDA009BE8E1 /* Constants.swift in Sources */,
 			);

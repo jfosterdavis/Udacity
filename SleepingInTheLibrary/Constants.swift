@@ -18,11 +18,12 @@ struct Constants {
     // MARK: Flickr Parameter Keys
     struct FlickrParameterKeys {
         static let Method = "method"
-        static let APIKey = "api_key"
+        static let APIKey = Secrets.FlickrAPIKey
         static let GalleryID = "gallery_id"
         static let Extras = "extras"
         static let Format = "format"
         static let NoJSONCallback = "nojsoncallback"
+
     }
     
     // MARK: Flickr Parameter Values

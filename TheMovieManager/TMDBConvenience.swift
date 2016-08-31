@@ -76,8 +76,8 @@ extension TMDBClient {
         /* 1. Specify parameters, the API method, and the HTTP body (if POST) */
         // /authentication/token/new
         // parameters: api_key
-        let method = "/authentication/token/new"
-        let parameters = ["" : ""]
+        let method = TMDBClient.Methods.AuthenticationTokenNew
+        let parameters = [String:AnyObject]()
         
         
         /* 2. Make the request */
@@ -85,11 +85,11 @@ extension TMDBClient {
             /* 3. Send the desired value(s) to completion handler */
             if error != nil {
                 //there was an error
-                completionHandlerForToken(success: false, requestToken: nil, errorString: "Failed to obtain token!")
+                completionHandlerForToken(success: false, requestToken: nil, errorString: "Failed to obtain token! GetMethod returned error: " + (error?.userInfo.description)!)
             } else {
                 
                 //There was no error with the GET request
-                if let token = results["request_token"] as? String {
+                if let token = results[TMDBClient.JSONResponseKeys.RequestToken] as? String {
                     //we have the token
                     print("The token is: " + token)
                     completionHandlerForToken(success: true, requestToken: token, errorString: nil)

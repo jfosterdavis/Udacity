@@ -14,7 +14,7 @@ extension TMDBClient {
     struct Constants {
         
         // MARK: API Key
-        static let ApiKey : String = "YOUR_API_KEY_HERE"
+        static let ApiKey : String = Secrets.APIKey
                         
         // MARK: URLs
         static let ApiScheme = "https"

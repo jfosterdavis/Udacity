@@ -25,6 +25,7 @@
 		A9855BE01BEC4DEB00000031 /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9855BDC1BEC4DEB00000031 /* WatchlistViewController.swift */; };
 		A9FA13531D1AB73A00B5F46E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9FA13511D1AB73A00B5F46E /* LaunchScreen.xib */; };
 		F60F6D081D76AD350025E6FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F60F6D071D76AD350025E6FB /* .gitignore */; };
+		F60F6D0A1D76AE120025E6FB /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60F6D091D76AE120025E6FB /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A9855BDC1BEC4DEB00000031 /* WatchlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
 		A9FA13521D1AB73A00B5F46E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F60F6D071D76AD350025E6FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		F60F6D091D76AE120025E6FB /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F60F6D071D76AD350025E6FB /* .gitignore */,
+				F60F6D091D76AE120025E6FB /* Secrets.swift */,
 				A9855BB81BEC3EDB00000031 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9855BAD1BEC3EDB00000031 /* AppDelegate.swift in Sources */,
+				F60F6D0A1D76AE120025E6FB /* Secrets.swift in Sources */,
 				A9855BCF1BEC41A800000031 /* TMDBMovie.swift in Sources */,
 				A9855BC91BEC415F00000031 /* TMDBConfig.swift in Sources */,
 				A9855BCE1BEC41A800000031 /* TMDBConvenience.swift in Sources */,
